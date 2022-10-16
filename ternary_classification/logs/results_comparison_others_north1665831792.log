@@ -1,0 +1,202 @@
+================================Full Model review=============================
+===============================Compared Results=============================
+track---y_test shape-----: (162, 3)
+=============================
+['Neuropathy' 'History of Drinking' 'Age' 'Weight' 'SBP' 'DBP'
+ 'Heart Rate' 'ALT' 'AST' 'ALP' 'UA' 'TC' 'HDL-C' 'LDL-C' 'P' 'FT3' 'FT4'
+ 'VD3' 'N-MID' 'β-CTX']
+track --- feature length :  20
+track --- model :  <class 'sklearn.ensemble._forest.RandomForestClassifier'>
+track --- calibration model :  <class 'sklearn.calibration.CalibratedClassifierCV'>
+================================
+track --- mean_acc :  0.9012345679012346
+track --- acc :  0.9012  calibration :  0.9259
+track ---1- mean_acc :  0.0988  calibration :  0.0741
+track --- precision:  0.9049  calibration :  0.9326
+track --- recall:  0.9018  calibration :  0.9254
+track --- fscore:  0.902  calibration :  0.9267
+track --- 1- fscore:  0.098  calibration :  0.0733
+==============original================
+track --- auroc: 
+[[0, 0.9357052555535489], [1, 0.9118037135278515], [2, 0.9306711979609176], ['micro', 0.9259259259259259]]
+track --- conf_ma : 
+[[44  2  3]
+ [ 2 50  6]
+ [ 1  2 52]]
+track --- conf_ma_scaled : 
+[[0.89795918 0.04081633 0.06122449]
+ [0.03448276 0.86206897 0.10344828]
+ [0.01818182 0.03636364 0.94545455]]
+==============after calibration================
+track --- auroc : 
+[[0, 0.9445548130756728], [1, 0.9386604774535808], [2, 0.9488530161427359], ['micro', 0.9444444444444445]]
+track --- conf_ma : 
+[[44  1  4]
+ [ 1 52  5]
+ [ 0  1 54]]
+track --- conf_ma_scaled : 
+[[0.89795918 0.02040816 0.08163265]
+ [0.01724138 0.89655172 0.0862069 ]
+ [0.         0.01818182 0.98181818]]
+======================================
+===============================Multinomial Logistic regression=============================
+track---y_test shape-----: (162, 3)
+=============================
+['Neuropathy' 'History of Drinking' 'Age' 'Weight' 'SBP' 'DBP'
+ 'Heart Rate' 'ALT' 'AST' 'ALP' 'UA' 'TC' 'HDL-C' 'LDL-C' 'P' 'FT3' 'FT4'
+ 'VD3' 'N-MID' 'β-CTX']
+track --- feature length :  20
+track --- model :  <class 'sklearn.linear_model._logistic.LogisticRegression'>
+track --- calibration model :  <class 'sklearn.calibration.CalibratedClassifierCV'>
+================================
+track --- mean_acc :  0.8765432098765432
+track --- acc :  0.8765  calibration :  0.8519
+track ---1- mean_acc :  0.1235  calibration :  0.1481
+track --- precision:  0.8774  calibration :  0.853
+track --- recall:  0.8779  calibration :  0.8543
+track --- fscore:  0.877  calibration :  0.8533
+track --- 1- fscore:  0.123  calibration :  0.1467
+==============original================
+track --- auroc: 
+[[0, 0.9224309192703631], [1, 0.8983753315649866], [2, 0.9033984706881902], ['micro', 0.9074074074074073]]
+track --- conf_ma : 
+[[44  2  3]
+ [ 3 49  6]
+ [ 3  3 49]]
+track --- conf_ma_scaled : 
+[[0.89795918 0.04081633 0.06122449]
+ [0.05172414 0.84482759 0.10344828]
+ [0.05454545 0.05454545 0.89090909]]
+==============after calibration================
+track --- auroc : 
+[[0, 0.9224309192703631], [1, 0.866710875331565], [2, 0.8805437553101104], ['micro', 0.888888888888889]]
+track --- conf_ma : 
+[[44  4  1]
+ [ 2 47  9]
+ [ 4  4 47]]
+track --- conf_ma_scaled : 
+[[0.89795918 0.08163265 0.02040816]
+ [0.03448276 0.81034483 0.15517241]
+ [0.07272727 0.07272727 0.85454545]]
+======================================
+===============================KNN=============================
+track---y_test shape-----: (162, 3)
+=============================
+['Neuropathy' 'History of Drinking' 'Age' 'Weight' 'SBP' 'DBP'
+ 'Heart Rate' 'ALT' 'AST' 'ALP' 'UA' 'TC' 'HDL-C' 'LDL-C' 'P' 'FT3' 'FT4'
+ 'VD3' 'N-MID' 'β-CTX']
+track --- feature length :  20
+track --- model :  <class 'sklearn.neighbors._classification.KNeighborsClassifier'>
+track --- calibration model :  <class 'sklearn.calibration.CalibratedClassifierCV'>
+================================
+track --- mean_acc :  0.7901234567901234
+track --- acc :  0.7901  calibration :  0.8333
+track ---1- mean_acc :  0.2099  calibration :  0.1667
+track --- precision:  0.8071  calibration :  0.8386
+track --- recall:  0.7921  calibration :  0.8348
+track --- fscore:  0.7852  calibration :  0.8342
+track --- 1- fscore:  0.2148  calibration :  0.1658
+==============original================
+track --- auroc: 
+[[0, 0.9003070254650534], [1, 0.8569297082228117], [2, 0.7722175021240442], ['micro', 0.8425925925925926]]
+track --- conf_ma : 
+[[44  3  2]
+ [ 4 52  2]
+ [ 7 16 32]]
+track --- conf_ma_scaled : 
+[[0.89795918 0.06122449 0.04081633]
+ [0.06896552 0.89655172 0.03448276]
+ [0.12727273 0.29090909 0.58181818]]
+==============after calibration================
+track --- auroc : 
+[[0, 0.9224309192703631], [1, 0.8723474801061009], [2, 0.8309260832625318], ['micro', 0.875]]
+track --- conf_ma : 
+[[44  2  3]
+ [ 3 51  4]
+ [ 3 12 40]]
+track --- conf_ma_scaled : 
+[[0.89795918 0.04081633 0.06122449]
+ [0.05172414 0.87931034 0.06896552]
+ [0.05454545 0.21818182 0.72727273]]
+======================================
+===============================SVM (one vs all)=============================
+track---y_test shape-----: (162, 3)
+=============================
+['Neuropathy' 'History of Drinking' 'Age' 'Weight' 'SBP' 'DBP'
+ 'Heart Rate' 'ALT' 'AST' 'ALP' 'UA' 'TC' 'HDL-C' 'LDL-C' 'P' 'FT3' 'FT4'
+ 'VD3' 'N-MID' 'β-CTX']
+track --- feature length :  20
+track --- model :  <class 'sklearn.multiclass.OneVsRestClassifier'>
+track --- calibration model :  <class 'sklearn.calibration.CalibratedClassifierCV'>
+================================
+track --- mean_acc :  0.8580246913580247
+track --- acc :  0.858  calibration :  0.9136
+track ---1- mean_acc :  0.142  calibration :  0.0864
+track --- precision:  0.8585  calibration :  0.9201
+track --- recall:  0.8594  calibration :  0.9147
+track --- fscore:  0.8589  calibration :  0.915
+track --- 1- fscore:  0.1411  calibration :  0.085
+==============original================
+track --- auroc: 
+[[0, 0.9224309192703631], [1, 0.8973806366047745], [2, 0.8623619371282923], ['micro', 0.8935185185185185]]
+track --- conf_ma : 
+[[44  0  5]
+ [ 3 50  5]
+ [ 3  7 45]]
+track --- conf_ma_scaled : 
+[[0.89795918 0.         0.10204082]
+ [0.05172414 0.86206897 0.0862069 ]
+ [0.05454545 0.12727273 0.81818182]]
+==============after calibration================
+track --- auroc : 
+[[0, 0.9503341159472638], [1, 0.921419098143236], [2, 0.935089209855565], ['micro', 0.9351851851851852]]
+track --- conf_ma : 
+[[45  1  3]
+ [ 1 50  7]
+ [ 1  1 53]]
+track --- conf_ma_scaled : 
+[[0.91836735 0.02040816 0.06122449]
+ [0.01724138 0.86206897 0.12068966]
+ [0.01818182 0.01818182 0.96363636]]
+======================================
+===============================DT=============================
+track---y_test shape-----: (162, 3)
+=============================
+['Neuropathy' 'History of Drinking' 'Age' 'Weight' 'SBP' 'DBP'
+ 'Heart Rate' 'ALT' 'AST' 'ALP' 'UA' 'TC' 'HDL-C' 'LDL-C' 'P' 'FT3' 'FT4'
+ 'VD3' 'N-MID' 'β-CTX']
+track --- feature length :  20
+track --- model :  <class 'sklearn.tree._classes.DecisionTreeClassifier'>
+track --- calibration model :  <class 'sklearn.calibration.CalibratedClassifierCV'>
+================================
+track --- mean_acc :  0.8580246913580247
+track --- acc :  0.858  calibration :  0.858
+track ---1- mean_acc :  0.142  calibration :  0.142
+track --- precision:  0.8674  calibration :  0.8781
+track --- recall:  0.8585  calibration :  0.8616
+track --- fscore:  0.8601  calibration :  0.8617
+track --- 1- fscore:  0.1399  calibration :  0.1383
+==============original================
+track --- auroc: 
+[[0, 0.9357052555535489], [1, 0.8895888594164456], [2, 0.8537807986406116], ['micro', 0.8935185185185185]]
+track --- conf_ma : 
+[[44  2  3]
+ [ 2 53  3]
+ [ 1 12 42]]
+track --- conf_ma_scaled : 
+[[0.89795918 0.04081633 0.06122449]
+ [0.03448276 0.9137931  0.05172414]
+ [0.01818182 0.21818182 0.76363636]]
+==============after calibration================
+track --- auroc : 
+[[0, 0.9401300343146108], [1, 0.8562665782493368], [2, 0.8886151231945623], ['micro', 0.8935185185185185]]
+track --- conf_ma : 
+[[44  0  5]
+ [ 2 43 13]
+ [ 0  3 52]]
+track --- conf_ma_scaled : 
+[[0.89795918 0.         0.10204082]
+ [0.03448276 0.74137931 0.22413793]
+ [0.         0.05454545 0.94545455]]
+======================================
+==============================END=============================

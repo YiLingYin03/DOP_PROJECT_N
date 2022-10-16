@@ -1,0 +1,41 @@
+================================ Ternary Model review=============================
+track---y_test shape-----: (162, 3)
+=============================
+['Neuropathy' 'History of Drinking' 'Age' 'Weight' 'SBP' 'DBP'
+ 'Heart Rate' 'ALT' 'AST' 'ALP' 'UA' 'TC' 'HDL-C' 'LDL-C' 'P' 'FT3' 'FT4'
+ 'VD3' 'N-MID' 'β-CTX']
+track --- feature length :  20
+track --- model :  <class 'sklearn.ensemble._forest.RandomForestClassifier'>
+track --- calibration model :  <class 'sklearn.calibration.CalibratedClassifierCV'>
+================================
+track --- mean_acc :  0.9012345679012346
+track --- acc :  0.9012  calibration :  0.9259
+track ---1- mean_acc :  0.0988  calibration :  0.0741
+track --- precision:  0.9049  calibration :  0.9326
+track --- recall:  0.9018  calibration :  0.9254
+track --- fscore:  0.902  calibration :  0.9267
+track --- 1- fscore:  0.098  calibration :  0.0733
+==============original================
+track --- auroc: 
+[[0, 0.9357052555535489], [1, 0.9118037135278515], [2, 0.9306711979609176], ['micro', 0.9259259259259259]]
+track --- conf_ma : 
+[[44  2  3]
+ [ 2 50  6]
+ [ 1  2 52]]
+track --- conf_ma_scaled : 
+[[0.9  0.04 0.06]
+ [0.03 0.86 0.1 ]
+ [0.02 0.04 0.95]]
+==============after calibration================
+track --- auroc : 
+[[0, 0.9445548130756728], [1, 0.9386604774535808], [2, 0.9488530161427359], ['micro', 0.9444444444444445]]
+track --- conf_ma : 
+[[44  1  4]
+ [ 1 52  5]
+ [ 0  1 54]]
+track --- conf_ma_scaled : 
+[[0.9  0.02 0.08]
+ [0.02 0.9  0.09]
+ [0.   0.02 0.98]]
+======================================
+==============================END=============================
